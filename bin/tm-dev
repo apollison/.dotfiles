@@ -1,0 +1,20 @@
+#!/bin/bash
+
+session_name='rad-sesh'
+
+tmux has-session -t $session_name
+if [ $? != 0 ]
+then
+  tmux new-session -ds $session_name
+  tmux set-window-option -t $session_name allow-rename-off
+  #tmux rename-window -t $session_name:0 hola
+
+  tmux split-window -v -p 20 -t $session_name:0
+
+  tmux select-pane -t 0
+
+  tmux send-keys -t $session_name:0.0 'nvim .' C-m
+fi
+
+tmux attach -t $session_name
+
