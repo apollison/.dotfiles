@@ -9,8 +9,8 @@ read -p "Enter Query: " query
 
 if grep -qs "$selected" ~/.cht-languages; then
     query=`echo $query | tr ' ' '+'`
-    curl cht.sh/$selected/$query/\" & curl cht.sh/$selected/$query
+    curl cht.sh/$selected/$query | less -R
 else
-    curl -s cht.sh/$selected~$query | less
+    curl -s cht.sh/$selected~$query | less -R
 fi
 
