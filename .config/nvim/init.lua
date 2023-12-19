@@ -231,6 +231,10 @@ require('lazy').setup({
   },
 
   {
+    'ThePrimeagen/git-worktree.nvim',
+  },
+
+  {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
     opts = {}
