@@ -1,3 +1,5 @@
+-- TODO: Move all plugin specific keymaps to their respective plugins file.
+--
 -- Go back to netrw.
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = 'Go to Netrw' })
 
@@ -14,8 +16,4 @@ vim.keymap.set('n', '<leader>tp', require("neotest").jump.prev, {desc = "Prev Te
 -- local gt = require('git-worktree')
 -- vim.keymap.set('n', '<leader>wc', gt.create_worktree(''), {desc = "Prev Test"})
 
-local tele = require("telescope")
-tele.load_extension("git_worktree")
-vim.keymap.set('n', '<leader>gws', tele.extensions.git_worktree.git_worktrees, { desc = 'git worktree search' })
-vim.keymap.set('n', '<leader>gwc', tele.extensions.git_worktree.create_git_worktree, { desc = 'git worktree create' })
 

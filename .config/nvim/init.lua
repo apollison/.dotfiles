@@ -43,6 +43,7 @@ P.S. You can delete this when you're done too. It's your config now :)
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+require('settings')
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
@@ -66,6 +67,9 @@ vim.opt.rtp:prepend(lazypath)
 --
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
+--
+-- replace the below setup with this one after everything is migrated.
+-- require('lazy').setup('plugins')
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
@@ -155,18 +159,6 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    --'navarasu/onedark.nvim',
-    --'phanviet/vim-monokai-pro',
-    --'tanvirtin/monokai.nvim',
-    'rose-pine/neovim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'rose-pine'
-    end,
-  },
-
-  {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
@@ -222,18 +214,6 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
-  'nvim-lua/plenary.nvim',
-  {
-    'ThePrimeagen/harpoon',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
-  },
-
-  {
-    'ThePrimeagen/git-worktree.nvim',
-  },
-
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
@@ -253,7 +233,7 @@ require('lazy').setup({
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   -- { import = 'custom.plugins' },
-  { import = 'apollison.plugins' },
+  { import = 'plugins' },
 }, {})
 
 -- [[ Setting options ]]
