@@ -22,5 +22,10 @@ return {
         })
       },
     })
+
+    vim.keymap.set('n', '<leader>tt', require("neotest").run.run, {desc = "Run [T]est"})
+    vim.keymap.set('n', '<leader>ts', require("neotest").summary.toggle, {desc = "Toggle [T]est [S]ummary"})
+    vim.keymap.set('n', '<leader>tn', require("neotest").jump.next, {desc = "Next Test"})
+    vim.keymap.set('n', '<leader>tp', require("neotest").jump.prev, {desc = "Prev Test"})
   end,
 }
