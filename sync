@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Running will setup all the symlinks into the proper config locations.
+
+stow tmux
+stow zsh
+
