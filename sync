@@ -5,4 +5,5 @@
 stow tmux
 stow zsh
 stow bin
+stow config
 
