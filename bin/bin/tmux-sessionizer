@@ -5,7 +5,8 @@ if [[ $# -eq 1 ]]; then
 else
   selected=$(
     {
-      find ~/code ~/.config -mindepth 1 -maxdepth 1 -type d &&
+      find ~/code -mindepth 1 -maxdepth 1 -type d &&
+      find ~/.dotfiles -maxdepth 0 -type d &&
       cat ~/.tmux-files 2> /dev/null;
     } |
     fzf
