@@ -23,9 +23,10 @@ return {
   'ellisonleao/gruvbox.nvim',
   priority = 1000,
   config = function()
+    local c = require('gruvbox')
+    c.config.contrast = 'hard'
     vim.o.background = "dark"
     vim.cmd([[colorscheme gruvbox]])
   end,
-  opts = {},
 }
 
