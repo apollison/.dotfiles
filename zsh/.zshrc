@@ -2,8 +2,6 @@
 alias vim=nvim
 alias vi=nvim
 alias v='nvim' # default Neovim config
-alias vl='NVIM_APPNAME=nvim-lazyvim nvim' # LazyVim
-alias vk='NVIM_APPNAME=nvim-kickstart nvim' # Kickstart
 
 # alias for .dotfile repo
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
@@ -18,4 +16,13 @@ setopt PROMPT_SUBST
 PROMPT='%F{red}${vcs_info_msg_0_}%f %F{cyan}%~%f: '
 #PROMPT='%F{green}%*%f %F{cyan}%~%f %F{red}${vcs_info_msg_0_}%f$ '
 # End prompt setup
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+export PATH=~/bin/:$PATH
+
+alias f='fd --hidden --type f --exclude .git | fzf | xargs nvim'
+alias '?'=duck
+
+alias gs='git status'
 
