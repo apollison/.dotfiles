@@ -2,9 +2,9 @@
 
 # Running will setup all the symlinks into the proper config locations.
 
-stow tmux
-stow zsh
-stow bin
-stow config
-stow root
+stow --no-folding tmux
+stow --no-folding zsh
+stow --no-folding bin
+stow --no-folding config
+stow --no-folding root
 
