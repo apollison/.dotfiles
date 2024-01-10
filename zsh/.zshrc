@@ -26,3 +26,9 @@ alias '?'=duck
 
 alias gs='git status'
 
+include () {
+    [[ -f "$1" ]] && source "$1"
+}
+
+include "~/.zlocal"
+
