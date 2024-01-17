@@ -6,6 +6,8 @@ alias v='nvim' # default Neovim config
 # alias for .dotfile repo
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+alias t=tmux-init
+
 # Prompt setup
 autoload -Uz vcs_info
 precmd() { vcs_info }
