@@ -12,6 +12,9 @@ vim.bo.softtabstop = 2
 
 -- See `:help vim.o`
 
+-- Set this to true to attempt to load any config files local to the cwd.
+vim.o.exrc = true
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
