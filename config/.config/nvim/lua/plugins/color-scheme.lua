@@ -19,14 +19,24 @@
 --   end,
 -- }
 
+-- return {
+--   'ellisonleao/gruvbox.nvim',
+--   priority = 1000,
+--   config = function()
+--     local c = require('gruvbox')
+--     c.config.contrast = 'hard'
+--     vim.o.background = "dark"
+--     vim.cmd([[colorscheme gruvbox]])
+--   end,
+-- }
+
 return {
-  'ellisonleao/gruvbox.nvim',
+  'sainnhe/sonokai',
   priority = 1000,
   config = function()
-    local c = require('gruvbox')
-    c.config.contrast = 'hard'
-    vim.o.background = "dark"
-    vim.cmd([[colorscheme gruvbox]])
+    -- found these two lets on the interwebs, dunno if they work.
+    -- let g:sonokai_style = 'maia'
+    -- let g:sonokai_better_performance = 1
+    vim.cmd.colorscheme 'sonokai'
   end,
 }
-
