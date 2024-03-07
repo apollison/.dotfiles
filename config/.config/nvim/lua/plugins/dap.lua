@@ -23,8 +23,10 @@ return {
       dapui.close()
     end
 
-    vim.keymap.set('n', '<leader>dt', dap.toggle_breakpoint, { desc = '[T]oggle breakpoint' })
+    vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = '[T]oggle breakpoint' })
     vim.keymap.set('n', '<leader>dc', dap.continue, { desc = '[C]ontinue dap' })
     vim.keymap.set('n', '<leader>ds', dap.step_over, { desc = '[S]tep over' })
+    -- TODO: load this only for dap-go
+    vim.keymap.set('n', '<leader>dt', function() require('dap-go').debug_test() end, { desc = 'debug individual [T]est' })
   end,
 }
