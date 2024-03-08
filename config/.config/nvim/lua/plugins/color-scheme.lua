@@ -35,8 +35,19 @@ return {
   priority = 1000,
   config = function()
     -- found these two lets on the interwebs, dunno if they work.
-    -- let g:sonokai_style = 'maia'
-    -- let g:sonokai_better_performance = 1
+    -- vim.g.sonokai_style = 'maia'
+    -- vim.g.sonokai_style = 'shusia'
+    vim.g.sonokai_better_performance = 1
+    -- vim.g.sonokai_colors_override = { 'bg0': ['#1e222a', '235'], 'bg2': ['#282c34', '236'] }
+    vim.g.sonokai_colors_override = {
+        bg_dim = {'#181819', '232'},
+        bg0 = {'#181819', '235'},
+        bg1 = {'#181819', '236'},
+        bg2 = {'#181819', '236'},
+        bg3 = {'#181819', '237'},
+        bg4 = {'#181819', '237'},
+    }
+      -- vim.g.sonokai_transparent_background = 1
     vim.cmd.colorscheme 'sonokai'
   end,
 }
