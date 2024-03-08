@@ -26,8 +26,11 @@ return {
     })
 
     vim.keymap.set('n', '<leader>tt', neo.run.run, {desc = "Run [T]est"})
-    vim.keymap.set('n', '<leader>ts', neo.summary.toggle, {desc = "Toggle [T]est [S]ummary"})
-    vim.keymap.set('n', '<leader>tn', neo.jump.next, {desc = "Next Test"})
-    vim.keymap.set('n', '<leader>tp', neo.jump.prev, {desc = "Prev Test"})
+    vim.keymap.set('n', '<leader>ts', neo.summary.toggle, {desc = "Toggle Test [S]ummary"})
+    vim.keymap.set('n', '<leader>tn', neo.jump.next, {desc = "[N]ext Test"})
+    vim.keymap.set('n', '<leader>tp', neo.jump.prev, {desc = "[P]rev Test"})
+    vim.keymap.set('n', '<leader>to', function ()
+      require("neotest").output.open({ enter = true })
+    end, {desc = "[O]pen test results"})
   end,
 }
