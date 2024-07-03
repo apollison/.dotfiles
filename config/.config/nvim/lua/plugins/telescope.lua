@@ -64,6 +64,7 @@ return {
           },
         },
         file_ignore_patterns = { ".git" },
+        path_display = {"smart", shorten = {len = 4}},
       },
       pickers = {
         find_files = {

@@ -23,3 +23,15 @@ vim.keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]]) -- make the window sma
 vim.keymap.set("n", "+", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally by pressing shift and =
 vim.keymap.set("n", "_", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally by pressing shift and -
 
+-- Keymaps for dealing with the register a little better. Stolen from our boi Prime.
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = 'Paste and keep for further pasting' })
+
+-- Not needed since I already yank to system clipboard, but keep here just in case.
+-- vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], { desc = 'Yank into system clipboard' })
+-- vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = 'Yank to end of line into system clipboard' })
+
+vim.keymap.set({"n", "v"}, "<leader>d", [["_d]], { desc = 'Delete to blackhole' })
+
+-- Center the curser on the search hit.
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
