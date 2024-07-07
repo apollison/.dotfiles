@@ -2,6 +2,7 @@ return {
   "nvim-neotest/neotest",
   dependencies = {
     "nvim-neotest/neotest-go",
+    "nvim-neotest/neotest-python",
   },
   config = function()
     -- get neotest namespace (api call creates or returns namespace)
