@@ -190,3 +190,13 @@ alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
+
+# Where to send windows when they open.
+[[on-window-detected]]
+if.app-name-regex-substring = 'Cisco Secure Client'
+run = ['move-node-to-workspace 1']
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'iTerm'
+run = ['move-node-to-workspace T']
+
