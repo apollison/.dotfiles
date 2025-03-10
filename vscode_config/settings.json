@@ -1,0 +1,19 @@
+{
+    "workbench.colorTheme": "Monokai Night",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "editor.minimap.enabled": false,
+    "editor.tabSize": 2,
+    "editor.lineNumbers": "relative",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "go.toolsManagement.autoUpdate": true,
+    "makefile.configureOnOpen": true,
+    "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "editor.accessibilitySupport": "on"
+}

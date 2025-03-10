@@ -2,9 +2,10 @@
 
 # Running will setup all the symlinks into the proper config locations.
 
-stow --no-folding tmux
-stow --no-folding zsh
-stow --no-folding bin
-stow --no-folding config
-stow --no-folding root
+stow --no-folding  tmux
+stow --no-folding  zsh
+stow --no-folding  bin
+stow --no-folding  config
+stow --no-folding  root
+stow --no-folding vscode_config -t ~/Library/Application\ Support/Code/User
 
