@@ -37,5 +37,8 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export GEM_PATH="$HOME/.gem/ruby/3.3.0/bin"
 export PATH="$GEM_PATH:$PATH"
 
+# Claude like this bin path, why fight it?
+export PATH="$HOME/.local/bin:$PATH"
+
 include "~/.zlocal"
 
