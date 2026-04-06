@@ -57,12 +57,11 @@ return {
             end
           end, { 'i', 's' }),
         },
-        sources = {
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'copilot' },
-          { name = "codeium" },
-        },
+      sources = {
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
+        { name = 'copilot' },
+      },
       }
     end
   }

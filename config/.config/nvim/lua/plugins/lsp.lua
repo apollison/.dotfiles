@@ -107,21 +107,40 @@ return {
 
     -- Ensure the servers above are installed
     local mason_lspconfig = require 'mason-lspconfig'
+    local use_native_lsp = vim.lsp and vim.lsp.config and vim.lsp.enable
+
+    local function setup_server(server_name)
+      local server_opts = {
+        capabilities = capabilities,
+        on_attach = on_attach,
+        settings = servers[server_name],
+        filetypes = (servers[server_name] or {}).filetypes,
+      }
+
+      if use_native_lsp then
+        vim.lsp.config(server_name, server_opts)
+        vim.lsp.enable(server_name)
+      else
+        require('lspconfig')[server_name].setup(server_opts)
+      end
+    end
 
     mason_lspconfig.setup {
       ensure_installed = vim.tbl_keys(servers),
     }
 
-    mason_lspconfig.setup_handlers {
-      function(server_name)
-        require('lspconfig')[server_name].setup {
-          capabilities = capabilities,
-          on_attach = on_attach,
-          settings = servers[server_name],
-          filetypes = (servers[server_name] or {}).filetypes,
-        }
-      end,
-    }
+    if mason_lspconfig.setup_handlers then
+      mason_lspconfig.setup_handlers {
+        function(server_name)
+          setup_server(server_name)
+        end,
+      }
+    else
+      -- Fallback for older/newer mason-lspconfig APIs
+      for server_name, _ in pairs(servers) do
+        setup_server(server_name)
+      end
+    end
 
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = "*.go",
