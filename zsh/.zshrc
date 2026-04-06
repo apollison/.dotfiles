@@ -39,6 +39,11 @@ export PATH="$GEM_PATH:$PATH"
 
 # Claude like this bin path, why fight it?
 export PATH="$HOME/.local/bin:$PATH"
+alias c=claude
+
+# Some ls helper things
+alias ls='ls -Alh --color=auto'
+
 
 include "~/.zlocal"
 
