@@ -45,5 +45,5 @@ alias c=claude
 alias ls='ls -Alh --color=auto'
 
 
-include "~/.zlocal"
+include "$HOME/.zlocal"
 
