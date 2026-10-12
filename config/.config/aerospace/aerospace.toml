@@ -192,9 +192,10 @@ alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
 # Where to send windows when they open.
+# Float so the small VPN dialog keeps its own size instead of tiling to fill workspace 1.
 [[on-window-detected]]
-if.app-name-regex-substring = 'Cisco Secure Client'
-run = ['move-node-to-workspace 1']
+if.app-id = 'com.cisco.secureclient.gui'
+run = ['layout floating', 'move-node-to-workspace 1']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'iTerm'
@@ -205,7 +206,37 @@ run = ['move-node-to-workspace T']
 # Match on app only: Electron creates the window before setting its title, and
 # on-window-detected runs once at creation, so a title match is a race that
 # usually loses. Side effect: every new Slack window tiles.
+#
+# Only the first matching rule runs, so Slack's workspace move lives in this rule too.
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
-run = ['layout tiling']
+run = ['layout tiling', 'move-node-to-workspace S']
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = ['move-node-to-workspace O']
+
+[[on-window-detected]]
+if.app-id = 'notion.id'
+run = ['move-node-to-workspace N']
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = ['move-node-to-workspace M']
+
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+run = ['move-node-to-workspace B']
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+run = ['move-node-to-workspace B']
+
+[[on-window-detected]]
+if.app-id = 'com.anthropic.claudefordesktop'
+run = ['move-node-to-workspace C']
+
+[[on-window-detected]]
+if.app-id = 'com.cmuxterm.app'
+run = ['move-node-to-workspace T']
 
