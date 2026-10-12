@@ -200,3 +200,12 @@ run = ['move-node-to-workspace 1']
 if.app-name-regex-substring = 'iTerm'
 run = ['move-node-to-workspace T']
 
+# Force Slack huddle windows to tile instead of floating on top.
+# Slack opens huddles as panel-level windows, which AeroSpace treats as floating by default.
+# Match on app only: Electron creates the window before setting its title, and
+# on-window-detected runs once at creation, so a title match is a race that
+# usually loses. Side effect: every new Slack window tiles.
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = ['layout tiling']
+
